@@ -1,0 +1,44 @@
+---
+title: "IELTS Writing Assistant"
+tags: ["React", "TypeScript", "Next.JS", "Tailwind"]
+slug: "ielts-writing"
+---
+
+import { TextBlock, Title, Tags } from "~/layouts/content";
+import { Block } from "~/components/block";
+
+export const content = (
+  <img src="/assets/web-9.svg" alt="IELTS Writing Assistant" />
+);
+
+{props.view === "sm" &&
+
+<Block
+  slug={frontmatter.slug}
+  {...frontmatter.data}
+  className="!min-h-60 !aspect-auto"
+>
+  <div className="absolute md:-right-20 left-20 md:left-auto md:top-1/4 h-[180%] md:w-full w-[150%] md:scale-125 origin-bottom-left">
+    {content}
+  </div>
+</Block>
+}
+
+{props.view === "lg" && (
+
+<div className="relative md:rounded-3xl rounded-2xl text-neutral-400 overflow-y-auto overflow-x-hidden md:p-11 p-6 flex flex-col bg-white">
+  <Title>{frontmatter.title}</Title>
+  <TextBlock>
+    For the writing section, I built an AI-powered IELTS prep tool that
+    evaluates both Part 1 and Part 2 writing tasks. We parsed 40 mock questions,
+    and the AI provides feedback and scores based on the user's responses. I
+    also included a timer to simulate real exam conditions, helping users
+    practice under pressure. Just like with the speaking section, the AI gives
+    suggestions and detailed evaluations to help improve writing skills.
+  </TextBlock>
+  <Tags tags={frontmatter.tags} />
+  <div className="absolute bottom-20 md:left-1/2 md:w-2/3  w-[200%] ">
+    {content}
+  </div>
+</div>
+)}

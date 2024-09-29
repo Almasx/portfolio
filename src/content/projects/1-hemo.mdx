@@ -1,0 +1,47 @@
+---
+title: "Landing Page for Hemo Labs"
+tags: ["Astro.JS", "Tailwind", "TypeScript", "React", "Framer Motion"]
+slug: "hemo-labs"
+---
+
+import { TextBlock, Title, Tags } from "~/layouts/content";
+import { Block } from "~/components/block";
+
+export const content = (
+  <div class="flex flex-col items-center">
+    <img src="/assets/web-1.svg" alt="Hemo Labs Logo" class="mx-10" />
+    <video
+      src="/assets/web-1.mp4"
+      class="scale-150 origin-top"
+      autoPlay
+      muted
+      loop
+    />
+  </div>
+);
+
+{props.view === "sm" &&
+
+<Block slug={frontmatter.slug} {...frontmatter.data} >
+  <div class="absolute left-1/2 -translate-x-1/2 top-20 ">{content}</div>
+</Block>}
+{props.view === "lg" && (
+
+<div class="bg-neutral-50 relative md:rounded-3xl rounded-2xl  overflow-hidden md:p-11 p-6 flex flex-col text-neutral-400">
+  <Title className="!text-[#F58E7E]">{frontmatter.title}</Title>
+  <TextBlock>
+    I redesigned the Hemo AI website, which offers AI-based blood test
+    recommendations. The original site was at hemo-ai.kz, and I developed a new
+    version at hemo-theta.vercel.app (now inactive). My work included creating
+    the main page and an application page with a dynamic form that lets users
+    enter health information and receive personalized blood test
+    recommendations.
+  </TextBlock>
+  <Tags
+    tags={frontmatter.tags}
+    highlight={"hover:text-[#F58E7E]"}
+    className="mb-12"
+  />
+  <div class="top-1/3 md:absolute md:w-1/2 left-1/2 mb-24">{content}</div>
+</div>
+)}

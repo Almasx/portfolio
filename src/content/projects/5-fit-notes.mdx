@@ -1,0 +1,39 @@
+---
+title: "Fitnotes"
+tags: ["Expo", "Tailwind", "TypeScript", "React Native"]
+slug: "fitnotes"
+---
+
+import { TextBlock, Title, Tags } from "~/layouts/content";
+import { Block } from "~/components/block";
+
+export const content = <img src="/assets/web-6.png" />;
+
+{props.view === "sm" &&
+
+<Block
+  slug={frontmatter.slug}
+  {...frontmatter.data}
+  className="bg-black !aspect-[2/3]"
+  size="sm"
+>
+  <div className="absolute bottom-20 left-20 w-full">{content}</div>
+</Block>
+}
+
+{props.view === "lg" && (
+
+<div className="relative md:rounded-3xl rounded-2xl overflow-y-auto overflow-x-hidden md:p-11 p-6 flex flex-col bg-black text-neutral-400">
+  <Title className="text-white">{frontmatter.title}</Title>
+  <TextBlock>
+    Right now, it’s just a concept. I’ve been using FitNotes on Android for a
+    while, and there’s nothing like it on iOS that’s both free and usable.
+    That’s why I’m building my own. It’s a simple, effective workout tracker
+    that shows progress and works without frustration. I’m trying out some new
+    design ideas and plan to keep improving it over time to make it something
+    people actually want to use.
+  </TextBlock>
+  <Tags tags={frontmatter.tags} className="mb-20" />
+  <div className="md:absolute bottom-20 -right-20">{content}</div>
+</div>
+)}

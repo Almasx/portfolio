@@ -1,0 +1,46 @@
+---
+const links = [
+  { name: 'Github', url: 'https://github.com/Almasx' },
+  { name: 'Email', url: 'mailto:almas.sapar@uni.minerva.edu' },
+  { name: 'Resume', url: '/sapar-almas-cv.pdf' },
+  { name: 'Linkedin', url: 'https://www.linkedin.com/in/almas-sapar/' },
+];
+
+import { Link } from "./link";
+---
+
+<nav class="flex justify-between md:hidden bg-white/10 fixed backdrop-blur top-0 z-20 rounded-xl h-14 inset-x-0 items-center px-4 text-sm ">
+  {links.map((link) => (
+    <Link href={link.url} client:load>{link.name}</Link>
+  ))}
+</nav>
+
+
+<div class="bg-white rounded-xl md:w-[480px] h-[480px] md:sticky md:h-screen top-0 flex flex-col pt-16 px-6 md:pt-60 md:px-12 pb-10 md:pb-20 ">
+  <img src="/pfp.png" alt="Almas" class="size-16 rounded-xl mb-4">
+  <h1 class="text-4xl tracking-tight leading-10 mb-8 font-meduim">
+    <span class="text-neutral-500">Hey!</span> I’m Almas
+    <br />
+    <span class="font-mono inline-block -mx-1">
+      <span class="text-neutral-400">(</span>Design<span class="text-[#F66E25] px-2">&</span>Code<span class="text-neutral-400">)</span>
+    </span>
+    <br />
+    Fullstack&nbsp;Developer
+  </h1>
+
+  <div class=" bg-gradient-to-b from-neutral-50 to-neutral-200 p-0.5 pb-1 rounded-xl mr-auto group hover:scale-105 duration-300 mb-auto">
+    <a
+      href="https://t.me/saparxyz" target="_blank"
+      class="bg-gradient-to-b block font-medium from-neutral-100 text-neutral-700 to-neutral-50 px-3 py-1.5 mr-auto rounded-lg group-hover:text-[#F66E25] duration-300"
+    >Let’s talk</a>
+  </div>
+  
+  <p class="mb-4 font-mono leading-5 text-neutral-400">Currently student base in SF<br>Previously at Yandex.</p>
+
+  <div class="md:flex flex-col justify-start hidden">
+    {links.map((link) => (
+      <Link href={link.url} client:load>{link.name}</Link>
+    ))}
+  </div>
+
+</div>

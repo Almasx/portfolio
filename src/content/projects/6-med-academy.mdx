@@ -1,0 +1,41 @@
+---
+title: "Med Academy"
+tags: ["React", "Tailwind", "TypeScript", "Next.js"]
+slug: "med-academy"
+---
+
+import { TextBlock, Title, Tags } from "~/layouts/content";
+import { Block } from "~/components/block";
+
+export const content = <img src="/assets/web-7.png" alt="Med Academy" />;
+
+{props.view === "sm" &&
+
+<Block
+  slug={frontmatter.slug}
+  size="sm"
+  {...frontmatter.data}
+  className="!bg-blue-50 !aspect-[2/3] p-16 flex items-center justify-center"
+>
+  <div class="scale-75">{content}</div>
+</Block>
+}
+
+{props.view === "lg" && (
+
+<div className="relative md:rounded-3xl rounded-2xl overflow-y-auto text-slate-600 overflow-x-hidden md:p-11 p-6 flex flex-col bg-blue-50">
+  <Title>{frontmatter.title}</Title>
+  <TextBlock>
+    The National Medical Academy used to handle course sign-ups through WhatsApp
+    and a manual process that took forever, with lots of back-and-forth. I built
+    a custom form using React with mobile-first design, cutting the process down
+    to just five minutes. As a result, sign-ups went up by 15%.
+  </TextBlock>
+  <Tags
+    tags={frontmatter.tags}
+    highlight={"hover:text-blue-500"}
+    className="mb-20"
+  />
+  <div className="md:absolute top-1/4 right-20 ">{content}</div>
+</div>
+)}

@@ -1,0 +1,42 @@
+---
+title: "IELTS Speaking Practice"
+tags: ["React", "Whisper", "TypeScript", "Tailwind", "Zustand"]
+slug: "ielts-speaking"
+---
+
+import { TextBlock, Title, Tags } from "~/layouts/content";
+import { Block } from "~/components/block";
+
+export const content = (
+  <img src="/assets/web-8.png" alt="IELTS Speaking Practice App" />
+);
+
+{props.view === "sm" &&
+
+<Block
+  slug={frontmatter.slug}
+  {...frontmatter.data}
+  size="sm"
+  className="!bg-black pt-20 !aspect-[2/3]"
+>
+  <div class="w-full relative -right-20">{content}</div>
+</Block>
+}
+
+{props.view === "lg" && (
+
+<div className="relative md:rounded-3xl rounded-2xl overflow-y-auto overflow-x-hidden md:p-11 p-6 flex text-neutral-400 flex-col gap-8 bg-black ">
+  <Title className="text-white">{frontmatter.title}</Title>
+  <TextBlock>
+    For an IELTS preparation project, I developed an AI-based app that gives
+    real-time speaking assessments. This was part of a hackathon, and I used
+    Sanity CMS to track mock tasks while integrating Whisper API to handle
+    speech recognition. The AI evaluates responses, provides feedback, and
+    suggests improvements, along with a score—using GPT's function calling
+    feature. It’s like having an AI evaluator on hand, helping users prep for
+    the speaking part of the exam more effectively.
+  </TextBlock>
+  <Tags tags={frontmatter.tags} className="mb-16" />
+  <div className="md:absolute top-64 right-0 transform md:w-1/2">{content}</div>
+</div>
+)}

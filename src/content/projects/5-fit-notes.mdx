@@ -14,7 +14,8 @@ export const content = <img src="/assets/web-6.png" />;
 <Block
   slug={frontmatter.slug}
   {...frontmatter.data}
-  className="bg-black !aspect-[2/3]"
+  data-cursor-text={frontmatter.title}
+  className="!bg-black !aspect-[2/3]"
   size="sm"
 >
   <div className="absolute bottom-20 left-20 w-full">{content}</div>
@@ -33,7 +34,7 @@ export const content = <img src="/assets/web-6.png" />;
     design ideas and plan to keep improving it over time to make it something
     people actually want to use.
   </TextBlock>
-  <Tags tags={frontmatter.tags} className="mb-20" />
+  <Tags tags={frontmatter.tags} className="!mb-20 md:!mb-0" />
   <div className="md:absolute bottom-20 -right-20">{content}</div>
 </div>
 )}

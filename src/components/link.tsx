@@ -1,6 +1,8 @@
-interface LinkProps {
+import clsx from "clsx";
+import type { HTMLAttributes } from "react";
+
+interface LinkProps extends HTMLAttributes<HTMLAnchorElement> {
   href: string;
-  children: React.ReactNode;
 }
 
 export const Link: React.FC<LinkProps> = ({ href, children }) => {

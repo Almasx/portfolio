@@ -16,7 +16,8 @@ export const content = (
 <Block
   slug={frontmatter.slug}
   {...frontmatter.data}
-  className="!bg-blue-900 md:p-0 pt-20 md:pl-20  p-4 h-fit"
+  data-cursor-text={frontmatter.title}
+  className="!bg-blue-900  pt-20 md:pl-20 p-4  h-fit"
 >
   {content}
 </Block>

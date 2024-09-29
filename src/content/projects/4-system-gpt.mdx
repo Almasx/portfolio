@@ -17,7 +17,11 @@ export const content = (
 
 {props.view === "sm" &&
 
-<Block slug={frontmatter.slug} {...frontmatter.data}>
+<Block
+  slug={frontmatter.slug}
+  {...frontmatter.data}
+  data-cursor-text={frontmatter.title}
+>
   {content}
 </Block>
 }

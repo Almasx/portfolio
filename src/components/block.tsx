@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { useState } from "react";
 
 interface BlockProps extends React.HTMLAttributes<HTMLDivElement> {
   slug: string;
@@ -13,8 +12,6 @@ export const Block: React.FC<BlockProps> = ({
   slug,
   size = "md",
 }) => {
-  const [isHovered, setIsHovered] = useState(false);
-
   return (
     <a
       href={`/projects/${slug}`}
@@ -29,8 +26,6 @@ export const Block: React.FC<BlockProps> = ({
           "duration-300 ease-in-out hover:scale-[1.01] md:col-span-3 aspect-square",
           className
         )}
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
       >
         {children}
       </div>

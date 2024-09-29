@@ -5,12 +5,12 @@ import Layout from '~/layouts/base.astro';
 const projects = await getCollection('projects');
 ---
 
-<Layout title="Welcome to Astro">
+<Layout title="Almas Sapar">
 	<main class="grid grid-cols-1 md:grid-cols-6 gap-3 md:gap-4 p-1 md:p-4 bg-white grow rounded-xl">
 		{projects.map(async (project) => {
 			const { Content } = await project.render();
 
-			return <Content view="sm"/>	;
+			return <Content view="sm" />;
 		})}
 	</main>
 </Layout>

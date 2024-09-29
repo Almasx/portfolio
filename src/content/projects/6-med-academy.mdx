@@ -15,6 +15,7 @@ export const content = <img src="/assets/web-7.png" alt="Med Academy" />;
   slug={frontmatter.slug}
   size="sm"
   {...frontmatter.data}
+  data-cursor-text={frontmatter.title}
   className="!bg-blue-50 !aspect-[2/3] p-16 flex items-center justify-center"
 >
   <div class="scale-75">{content}</div>

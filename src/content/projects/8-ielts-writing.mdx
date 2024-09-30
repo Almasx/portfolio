@@ -19,7 +19,7 @@ export const content = (
   data-cursor-text={frontmatter.title}
   className="!min-h-60 !aspect-auto"
 >
-  <div className="absolute md:-right-20 left-20 md:left-auto md:top-1/4 h-[180%] md:w-full w-[150%] md:scale-125 origin-bottom-left">
+  <div className="absolute md:-right-2/3 lg:-right-20 left-20 md:top-1/6 h-[180%] sm:h-auto xl:w-full w-[150%] md:scale-125 origin-bottom-left">
     {content}
   </div>
 </Block>
@@ -38,7 +38,7 @@ export const content = (
     suggestions and detailed evaluations to help improve writing skills.
   </TextBlock>
   <Tags tags={frontmatter.tags} />
-  <div className="absolute bottom-20 md:left-1/2 md:w-2/3  w-[200%] ">
+  <div className="md:absolute bottom-20 md:left-1/2 md:w-2/3 mt-16 md:mt-0 w-[200%] ">
     {content}
   </div>
 </div>

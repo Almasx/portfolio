@@ -22,7 +22,7 @@ export const Block: React.FC<BlockProps> = ({
     >
       <div
         className={clsx(
-          "bg-neutral-50 relative rounded-3xl overflow-hidden md:min-h-[512px]",
+          "bg-neutral-50 relative rounded-2xl xl:rounded-3xl overflow-hidden 2xl:min-h-[512px]",
           "duration-300 ease-in-out hover:scale-[1.01] md:col-span-3 aspect-square",
           className
         )}

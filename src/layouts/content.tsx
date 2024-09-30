@@ -26,7 +26,12 @@ export const TextBlock: React.FC<TextBlockProps> = ({
   className,
 }) => {
   return (
-    <p className={clsx("md:w-96 font-mono mb-2 text-inherit", className)}>
+    <p
+      className={clsx(
+        "md:w-96 font-mono mb-2 text-inherit relative z-10",
+        className
+      )}
+    >
       {children}
     </p>
   );
@@ -45,7 +50,7 @@ export const Tags: React.FC<TagProps> = ({
   return (
     <div
       className={clsx(
-        "flex flex-wrap gap-3 gap-y-0 md:w-96 text-inherit mb-auto md:mb-0",
+        "flex flex-wrap gap-3 gap-y-0 md:w-96 text-inherit mb-auto md:mb-0 relative z-10",
         className
       )}
     >

@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { Link } from "~/components/link";
 
 export const Title: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   className,
@@ -38,13 +37,13 @@ export const TextBlock: React.FC<TextBlockProps> = ({
 };
 
 interface TagProps extends React.HTMLAttributes<HTMLDivElement> {
-  tags: string[];
+  skills: string[];
   highlight?: string;
 }
 
-export const Tags: React.FC<TagProps> = ({
+export const Skills: React.FC<TagProps> = ({
   className,
-  tags,
+  skills,
   highlight = "hover:text-[#F66E25]",
 }) => {
   return (
@@ -54,7 +53,7 @@ export const Tags: React.FC<TagProps> = ({
         className
       )}
     >
-      {tags.map((tag) => (
+      {skills.map((tag) => (
         <p
           className={clsx(
             "before:content-['['] whitespace-nowrap before:mr-1 after:content-[']'] after:ml-1 ",

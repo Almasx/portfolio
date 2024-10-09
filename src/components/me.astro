@@ -1,51 +1,44 @@
 ---
 const links = [
   { name: 'Github', url: 'https://github.com/Almasx' },
-  { name: 'Email', url: 'mailto:almas.sapar@uni.minerva.edu' },
+  // { name: 'Email', url: 'mailto:almas.sapar@uni.minerva.edu' },
   { name: 'Resume', url: '/Almas-Sapar-CV.pdf' },
   { name: 'Linkedin', url: 'https://www.linkedin.com/in/almas-sapar/' },
 ];
 
-import { Link } from "./link";
+import { CTA } from './cta';
 import {ProfilePicture} from './pfp'
 
 const atProject = Astro.url.href.includes("projects")
 ---
 
-<nav class="flex justify-between md:hidden bg-neutral-200/10 fixed backdrop-blur top-0 z-20 rounded-b-xl inset-x-0 items-center p-1 gap-1">
-  {atProject && <a href="/" class="bg-white h-12 aspect-square items-center justify-center flex text-neutral-400 rounded-xl">←</a>}
-  {links.map((link) => (
-    <a href={link.url} target="_blank" class="bg-white before:content-['['] whitespace-nowrap before:mr-0.5 after:content-[']'] after:ml-0.5 text-sm h-12 items-center justify-center flex text-neutral-400 rounded-xl grow">{link.name}</Link>
-  ))}
-</nav>
 
-
-<div class="bg-white rounded-xl md:w-[480px] h-[480px] md:sticky md:h-screen top-0 flex flex-col pt-16 px-6 md:pt-32 xl:pt-60 lg:px-8 xl:px-12 pb-10 xl:pb-20 ">
-  <ProfilePicture client:load />
-  <h1 class="text-4xl tracking-tight leading-10 mb-8 font-meduim">
-    <span class="text-neutral-500">Hey!</span> I’m Almas
-    <br />
-    <span class="font-mono inline-block -mx-1">
-      <span class="text-neutral-400">(</span>Design<span class="text-[#F66E25] px-2">&</span>Code<span class="text-neutral-400">)</span>
-    </span>
-    <br />
-    Fullstack&nbsp;Developer
-  </h1>
-
-  <div class=" bg-gradient-to-b from-neutral-50 to-neutral-200 p-0.5 pb-1 rounded-xl mr-auto group hover:scale-105 duration-300 mb-auto">
-    <a
-      href="https://t.me/saparxyz" target="_blank"
-      class="bg-gradient-to-b block font-medium from-neutral-100 text-neutral-700 to-neutral-50 px-3 py-1.5 mr-auto rounded-lg group-hover:text-[#F66E25] duration-300"
-    >Let’s talk</a>
+<div class="md:w-[320px] md:sticky md:h-screen top-0 flex flex-col gap-0.5 shrink-0">
+  <div class="px-6 pt-16 pb-10 bg-white rounded-xl xl:pt-30 xl:pb-24">
+    <ProfilePicture client:load />
+    <h1 class="text-4xl leading-10 tracking-tight font-meduim">
+      <span class="text-neutral-500">Hey!</span> I’m Almas
+      <br />
+      <span class="inline-block -mx-1 font-mono">
+        <span class="-mr-1 text-neutral-400">(</span>0<span class="text-[#F66E25] px-2">→</span>1<span class="-ml-1 text-neutral-400">)</span> 
+      </span>
+   
+      Design Engineer
+    </h1>
   </div>
   
-  <p class="mb-4 font-mono leading-5 text-neutral-400">Currently student based in SF<br>Previously at Yandex.</p>
-  {atProject && <a href="/" class="mb-4 font-mono leading-5 text-neutral-600">See all projects →</a>}
-
-  <div class="md:flex flex-col justify-start hidden">
-    {links.map((link) => (
-      <Link href={link.url} client:load>{link.name}</Link>
-    ))}
+  <div class="p-6 bg-white rounded-xl">
+    <p class="font-mono leading-5 text-neutral-400">Currently Minerva student based in SF. Previously at Yandex.</p>
   </div>
+
+
+
+  <nav class="flex justify-between bg-neutral-200/10 fixed md:static backdrop-blur top-0 z-20 rounded-b-xl inset-x-0 items-center p-1 gap-0.5 md:p-0 md:bg-transparent">
+    {atProject && <a href="/" class="flex items-center justify-center h-12 bg-white aspect-square text-neutral-400 rounded-xl">←</a>}
+    {links.map((link) => (
+      <a href={link.url} target="_blank" class="bg-white before:content-['['] whitespace-nowrap before:mr-0.5 after:content-[']'] after:ml-0.5  h-12 items-center justify-center flex text-neutral-400 rounded-xl grow hover:text-[#F66E25] duration-200">{link.name}</Link>
+    ))}
+  </nav>
+ <CTA client:load/>
 
 </div>

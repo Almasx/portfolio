@@ -1,10 +1,11 @@
 ---
 title: "System GPT \nAI roadmap generation"
-tags: ["React", "XState", "Redis", "AI", "TypeScript", "Next.JS", "Tailwind"]
+skills: ["React", "XState", "Redis", "AI", "TypeScript", "Next.JS", "Tailwind"]
+tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
 slug: "system-gpt"
 ---
 
-import { TextBlock, Title, Tags } from "~/layouts/content";
+import { TextBlock, Title, Skills } from "~/layouts/content";
 import { Block } from "~/components/block";
 
 export const content = (
@@ -17,11 +18,7 @@ export const content = (
 
 {props.view === "sm" &&
 
-<Block
-  slug={frontmatter.slug}
-  {...frontmatter.data}
-  data-cursor-text={frontmatter.title}
->
+<Block slug={frontmatter.slug} tags={frontmatter.tags}>
   {content}
 </Block>
 }
@@ -37,7 +34,7 @@ export const content = (
     productivity. I used XState to handle the complex workflows and Redis as the
     database.
   </TextBlock>
-  <Tags tags={frontmatter.tags} />
+  <Skills skills={frontmatter.skills} />
   <div class="top-1/3 md:absolute md:w-1/2 scale-110 origin-center mt-[10%]  left-1/2">
     {content}
   </div>

@@ -2,6 +2,7 @@
 import Me from '~/components/me.astro';
 import { ViewTransitions } from 'astro:transitions';
 import PostHog from '~/components/analytics.astro';
+// import {Cursor} from '~/components/cursor'
 
 interface Props {
 	title: string;
@@ -23,12 +24,11 @@ const { title } = Astro.props;
 
     <PostHog />
 	</head>
-	<body class="bg-neutral-50 flex gap-1 md:gap-3 flex-col md:flex-row md:pt-0 pt-14 ">
+	<body class="flex flex-col gap-0.5 bg-neutral-50 md:flex-row md:pt-0 pt-14 ">
 		<Me /> 
 		<slot class="grow" />
 		<!-- <Cursor 
 		client:load 
-		className="bg-blue-500 text-white"
         initialScale={0.05}
         activeScale={1.2}
         inactiveOpacity={0.5}

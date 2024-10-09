@@ -1,10 +1,11 @@
 ---
 title: "IELTS Speaking Practice"
-tags: ["React", "Whisper", "TypeScript", "Tailwind", "Zustand"]
+skills: ["React", "Whisper", "TypeScript", "Tailwind", "Zustand"]
+tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
 slug: "ielts-speaking"
 ---
 
-import { TextBlock, Title, Tags } from "~/layouts/content";
+import { TextBlock, Title, Skills } from "~/layouts/content";
 import { Block } from "~/components/block";
 
 export const content = (
@@ -15,8 +16,7 @@ export const content = (
 
 <Block
   slug={frontmatter.slug}
-  {...frontmatter.data}
-  data-cursor-text={frontmatter.title}
+  tags={frontmatter.tags}
   size="sm"
   className="!bg-black pt-20 !aspect-[2/3]"
 >
@@ -37,7 +37,7 @@ export const content = (
     feature. It’s like having an AI evaluator on hand, helping users prep for
     the speaking part of the exam more effectively.
   </TextBlock>
-  <Tags tags={frontmatter.tags} className="mb-16" />
+  <Skills skills={frontmatter.skills} className="mb-16" />
   <div className="md:absolute top-64 right-0 transform md:w-1/2">{content}</div>
 </div>
 )}

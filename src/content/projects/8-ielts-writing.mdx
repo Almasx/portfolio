@@ -1,10 +1,11 @@
 ---
 title: "IELTS Writing Assistant"
-tags: ["React", "TypeScript", "Next.JS", "Tailwind"]
+skills: ["React", "TypeScript", "Next.JS", "Tailwind"]
+tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
 slug: "ielts-writing"
 ---
 
-import { TextBlock, Title, Tags } from "~/layouts/content";
+import { TextBlock, Title, Skills } from "~/layouts/content";
 import { Block } from "~/components/block";
 
 export const content = (
@@ -15,9 +16,8 @@ export const content = (
 
 <Block
   slug={frontmatter.slug}
-  {...frontmatter.data}
-  data-cursor-text={frontmatter.title}
-  className="!min-h-60 !aspect-auto"
+  tags={frontmatter.tags}
+  className="!min-h-60 !aspect-auto bg-white"
 >
   <div className="absolute md:-right-2/3 lg:-right-20 left-20 md:top-1/6 h-[180%] sm:h-auto xl:w-full w-[150%] md:scale-125 origin-bottom-left">
     {content}
@@ -37,7 +37,7 @@ export const content = (
     practice under pressure. Just like with the speaking section, the AI gives
     suggestions and detailed evaluations to help improve writing skills.
   </TextBlock>
-  <Tags tags={frontmatter.tags} />
+  <Skills skills={frontmatter.skills} />
   <div className="md:absolute bottom-20 md:left-1/2 md:w-2/3 mt-16 md:mt-0 w-[200%] ">
     {content}
   </div>

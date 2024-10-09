@@ -1,10 +1,11 @@
 ---
 title: "Landing Page for \nAstana Physics Battle"
-tags: ["React", "TypeScript", "Astro.JS", "Tailwind"]
+skills: ["React", "TypeScript", "Astro.JS", "Tailwind"]
+tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
 slug: "astana-physics-battle"
 ---
 
-import { TextBlock, Title, Tags } from "~/layouts/content";
+import { TextBlock, Title, Skills } from "~/layouts/content";
 import { Block } from "~/components/block";
 
 export const content = (
@@ -15,8 +16,7 @@ export const content = (
 
 <Block
   slug={frontmatter.slug}
-  {...frontmatter.data}
-  data-cursor-text={frontmatter.title}
+  tags={frontmatter.tags}
   className="!bg-blue-900  pt-20 md:pl-20 p-4  h-fit"
 >
   {content}
@@ -35,7 +35,7 @@ export const content = (
     Beyond Curriculum, a leading Olympiad community in Kazakhstan, with whom
     I've worked on multiple projects.
   </TextBlock>
-  <Tags tags={frontmatter.tags} highlight={"hover:text-[#E9C45B]"} />
+  <Skills skills={frontmatter.skills} highlight={"hover:text-[#E9C45B]"} />
   <div class="top-1/3 md:absolute w-full scale-110 origin-center mt-[10%] left-1/2">
     {content}
   </div>

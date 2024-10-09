@@ -1,10 +1,11 @@
 ---
 title: "Dark Fraction"
-tags: ["React", "TypeScript", "Next.JS", "Tailwind"]
+skills: ["React", "TypeScript", "Next.JS", "Tailwind"]
+tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
 slug: "dark-fraction"
 ---
 
-import { TextBlock, Title, Tags } from "~/layouts/content";
+import { TextBlock, Title, Skills } from "~/layouts/content";
 import { Block } from "~/components/block";
 
 export const content = <img src="/assets/web-10.svg" alt="Dark Fraction" />;
@@ -13,8 +14,7 @@ export const content = <img src="/assets/web-10.svg" alt="Dark Fraction" />;
 
 <Block
   slug={frontmatter.slug}
-  {...frontmatter.data}
-  data-cursor-text={frontmatter.title}
+  tags={frontmatter.tags}
   className="!bg-black !min-h-60 !aspect-auto"
 >
   <div className="absolute top-12 left-12">{content}</div>
@@ -31,7 +31,7 @@ export const content = <img src="/assets/web-10.svg" alt="Dark Fraction" />;
     created tools for admins to manage content efficiently and a user-friendly
     catalog for members. Payment was handled via VK Donut integration.
   </TextBlock>
-  <Tags tags={frontmatter.tags} highlight="hover:text-blue-500" />
+  <Skills skills={frontmatter.skills} highlight="hover:text-blue-500" />
   <div className="absolute top-1/2 left-20 md:left-1/2 w-[200%] md:w-full">
     {content}
   </div>

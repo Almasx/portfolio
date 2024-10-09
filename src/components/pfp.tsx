@@ -26,21 +26,19 @@ export const ProfilePicture = () => {
   };
 
   return (
-    <>
-      <div className="relative w-16 group hover:w-32 duration-300 ">
-        <video
-          ref={videoRef}
-          src="/pfp.mp4"
-          className="size-16 rounded-xl mb-4 group-hover:scale-[2] transform origin-top-left group-hover:mb-20 duration-300 ease-out"
-          muted
-          loop
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-        />
-        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-11 group-hover:opacity-100 opacity-0 backdrop-blur h-1.5 mb-4 rounded-full">
-          <Progress value={progress} />
-        </div>
+    <div className="relative mb-8 duration-300 size-16 group hover:size-32">
+      <video
+        ref={videoRef}
+        src="/pfp.mp4"
+        className="size-16 rounded-xl group-hover:scale-[2] transform origin-top-left group-hover:mb-20 duration-300 ease-out"
+        muted
+        loop
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      />
+      <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-11 group-hover:opacity-100 opacity-0 backdrop-blur h-1.5 mb-4 rounded-full">
+        <Progress value={progress} />
       </div>
-    </>
+    </div>
   );
 };

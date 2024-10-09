@@ -6,7 +6,6 @@ import {
   useSpring,
   useScroll,
   AnimatePresence,
-  useMotionValueEvent,
 } from "framer-motion";
 import { springConfig } from "~/const";
 
@@ -35,7 +34,7 @@ export const CTA = () => {
     checkMobile();
     window.addEventListener("resize", checkMobile);
 
-    useMotionValueEvent(scrollY, "change", (latest) => {
+    const unsubscribe = scrollY.onChange((latest) => {
       const progress =
         latest / (document.documentElement.scrollHeight - window.innerHeight);
       scrollProgress.set(progress);
@@ -43,6 +42,7 @@ export const CTA = () => {
     });
 
     return () => {
+      unsubscribe();
       window.removeEventListener("resize", checkMobile);
     };
   }, [scrollY, scrollProgress]);

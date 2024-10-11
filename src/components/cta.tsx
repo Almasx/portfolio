@@ -8,16 +8,23 @@ import {
   AnimatePresence,
 } from "framer-motion";
 import { springConfig } from "~/const";
+import { useMobile } from "~/hooks/use-mobile";
 
-const MOBILE_BREAKPOINT = 1024;
 const MOVE_DISTANCE = 180;
 const MOVE_ROTATE = 360 * 2;
+
+const MOBILE_ANIMATION = {
+  initial: { y: 100, opacity: 0 },
+  animate: { y: 0, opacity: 1 },
+  exit: { y: 100, opacity: 0 },
+  transition: { type: "spring", ...springConfig },
+};
 
 export const CTA = () => {
   const { scrollY } = useScroll();
   const scrollProgress = useMotionValue(0);
   const [isEndOfPage, setIsEndOfPage] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const isMobile = useMobile();
 
   const onClick = () => {
     window.scrollTo({
@@ -27,13 +34,6 @@ export const CTA = () => {
   };
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < MOBILE_BREAKPOINT); // Assuming 1024px is the breakpoint for desktop
-    };
-
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-
     const unsubscribe = scrollY.onChange((latest) => {
       const progress =
         latest / (document.documentElement.scrollHeight - window.innerHeight);
@@ -43,7 +43,6 @@ export const CTA = () => {
 
     return () => {
       unsubscribe();
-      window.removeEventListener("resize", checkMobile);
     };
   }, [scrollY, scrollProgress]);
 
@@ -53,19 +52,12 @@ export const CTA = () => {
   const springX = useSpring(x, springConfig);
   const springRotate = useSpring(rotate, springConfig);
 
-  const mobileAnimation = {
-    initial: { y: 100, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-    exit: { y: 100, opacity: 0 },
-    transition: { type: "spring", stiffness: 300, damping: 30 },
-  };
-
   return (
     <AnimatePresence>
       {(!isMobile || (isMobile && !isEndOfPage)) && (
         <motion.div
           className="fixed z-10 flex items-center h-10 px-2 mt-auto bg-white rounded-full inset-x-20 lg:relative bottom-8 lg:left-0 lg:translate-x-0 lg:bottom-0 lg:rounded-xl lg:w-full lg:h-14"
-          {...(isMobile ? mobileAnimation : {})}
+          {...(isMobile ? MOBILE_ANIMATION : {})}
         >
           <motion.span
             className="text-2xl leading-none lg:text-3xl"

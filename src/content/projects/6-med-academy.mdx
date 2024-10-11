@@ -1,8 +1,9 @@
 ---
 title: "Med Academy"
 skills: ["React", "Tailwind", "TypeScript", "Next.js"]
-tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
+tags: ["2024", "Med Academy", "UI/UX", "Frontend", "React", "Next.js"]
 slug: "med-academy"
+hook: "Form for medical professionals"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -10,17 +11,17 @@ import { Block } from "~/components/block";
 
 export const content = <img src="/assets/web-7.png" alt="Med Academy" />;
 
-{props.view === "sm" &&
-
 <Block
   slug={frontmatter.slug}
   size="sm"
   tags={frontmatter.tags}
+  hook={frontmatter.hook}
   className="!bg-blue-50 !aspect-[2/3] p-4 xl:p-16 flex items-center justify-center"
+  active={props.view === "sm"}
+  client:visible
 >
   <div class="scale-75">{content}</div>
 </Block>
-}
 
 {props.view === "lg" && (
 

@@ -1,8 +1,9 @@
 ---
 title: "Landing Page for Hemo Labs"
 skills: ["Astro.JS", "Tailwind", "TypeScript", "React", "Framer Motion"]
-tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
+tags: ["2024", "Hemo Labs", "UI/UX", "Frontend", "React", "Astro.JS"]
 slug: "hemo-labs"
+hook: "AI-powered blood test recommendations"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -21,11 +22,17 @@ export const content = (
   </div>
 );
 
-{props.view === "sm" &&
-
-<Block slug={frontmatter.slug} tags={frontmatter.tags} className="bg-white">
+<Block
+  slug={frontmatter.slug}
+  tags={frontmatter.tags}
+  hook={frontmatter.hook}
+  className="bg-white"
+  active={props.view === "sm"}
+  client:visible
+>
   <div class="absolute -translate-x-1/2 left-1/2 top-20 ">{content}</div>
-</Block>}
+</Block>
+
 {props.view === "lg" && (
 
 <div class="relative flex flex-col p-6 overflow-hidden bg-white md:rounded-3xl rounded-2xl md:p-11 text-neutral-400">

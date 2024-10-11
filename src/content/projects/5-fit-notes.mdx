@@ -1,8 +1,9 @@
 ---
 title: "Fitnotes"
 skills: ["Expo", "Tailwind", "TypeScript", "React Native"]
-tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
+tags: ["2024", "Personal Project", "UI/UX", "Mobile", "React Native", "Expo"]
 slug: "fitnotes"
+hook: "Simple, usable workout tracking"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -10,17 +11,17 @@ import { Block } from "~/components/block";
 
 export const content = <img src="/assets/web-6.png" />;
 
-{props.view === "sm" &&
-
 <Block
   slug={frontmatter.slug}
   tags={frontmatter.tags}
+  hook={frontmatter.hook}
   className="!bg-black !aspect-[2/3]"
   size="sm"
+  active={props.view === "sm"}
+  client:visible
 >
   <div className="absolute bottom-20 left-20 w-full">{content}</div>
 </Block>
-}
 
 {props.view === "lg" && (
 

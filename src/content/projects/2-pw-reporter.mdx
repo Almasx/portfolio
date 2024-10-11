@@ -1,8 +1,9 @@
 ---
 title: "Playwright Test Reporter"
 skills: ["React", "TypeScript", "Playwright", "Tailwind", "Tanstack Router"]
-tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
+tags: ["2024", "Developer Tools", "UI/UX", "Frontend", "Playwright", "Testing"]
 slug: "playwright-test-reporter"
+hook: "Refined debugging for Playwright tests"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -13,12 +14,15 @@ export const content = (
   <img src="/assets/web-2.png" alt="Playwright Test Reporter" />
 );
 
-{props.view === "sm" &&
-
-<Block slug={frontmatter.slug} tags={frontmatter.tags}>
+<Block
+  slug={frontmatter.slug}
+  tags={frontmatter.tags}
+  hook={frontmatter.hook}
+  client:visible
+  active={props.view === "sm"}
+>
   {content}
 </Block>
-}
 
 {props.view === "lg" && (
 

@@ -1,8 +1,9 @@
 ---
 title: "Dark Fraction"
 skills: ["React", "TypeScript", "Next.JS", "Tailwind"]
-tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
+tags: ["2023", "Dark Fraction", "CMS", "Frontend", "Next.js", "VK Integration"]
 slug: "dark-fraction"
+hook: "Custom CMS for 25k+ manga community"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -10,16 +11,16 @@ import { Block } from "~/components/block";
 
 export const content = <img src="/assets/web-10.svg" alt="Dark Fraction" />;
 
-{props.view === "sm" &&
-
 <Block
   slug={frontmatter.slug}
   tags={frontmatter.tags}
+  hook={frontmatter.hook}
   className="!bg-black !min-h-60 !aspect-auto"
+  active={props.view === "sm"}
+  client:visible
 >
   <div className="absolute top-12 left-12">{content}</div>
 </Block>
-}
 
 {props.view === "lg" && (
 

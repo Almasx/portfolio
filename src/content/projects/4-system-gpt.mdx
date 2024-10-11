@@ -1,8 +1,9 @@
 ---
 title: "System GPT \nAI roadmap generation"
 skills: ["React", "XState", "Redis", "AI", "TypeScript", "Next.JS", "Tailwind"]
-tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
+tags: ["2023", "AI", "Productivity", "Fullstack", "Next.js", "XState"]
 slug: "system-gpt"
+hook: "AI-driven personalized goal setting and planning"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -16,12 +17,15 @@ export const content = (
   />
 );
 
-{props.view === "sm" &&
-
-<Block slug={frontmatter.slug} tags={frontmatter.tags}>
+<Block
+  slug={frontmatter.slug}
+  tags={frontmatter.tags}
+  hook={frontmatter.hook}
+  active={props.view === "sm"}
+  client:visible
+>
   {content}
 </Block>
-}
 
 {props.view === "lg" && (
 

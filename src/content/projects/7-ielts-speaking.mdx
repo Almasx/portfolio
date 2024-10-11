@@ -1,8 +1,10 @@
 ---
 title: "IELTS Speaking Practice"
 skills: ["React", "Whisper", "TypeScript", "Tailwind", "Zustand"]
-tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
+tags:
+  ["2023", "IELTS Prep", "AI", "Frontend", "Speech Recognition", "Education"]
 slug: "ielts-speaking"
+hook: "Real-time AI feedback for IELTS speaking"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -12,17 +14,17 @@ export const content = (
   <img src="/assets/web-8.png" alt="IELTS Speaking Practice App" />
 );
 
-{props.view === "sm" &&
-
 <Block
   slug={frontmatter.slug}
   tags={frontmatter.tags}
+  hook={frontmatter.hook}
   size="sm"
   className="!bg-black pt-20 !aspect-[2/3]"
+  active={props.view === "sm"}
+  client:visible
 >
   <div class="w-full relative -right-20">{content}</div>
 </Block>
-}
 
 {props.view === "lg" && (
 

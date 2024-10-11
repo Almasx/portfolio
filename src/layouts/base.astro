@@ -1,58 +1,51 @@
 ---
-import Me from '~/components/me.astro';
-import { ViewTransitions } from 'astro:transitions';
-import PostHog from '~/components/analytics.astro';
-// import {Cursor} from '~/components/cursor'
+import Me from "~/components/me.astro";
+import { ViewTransitions } from "astro:transitions";
+import PostHog from "~/components/analytics.astro";
+import { Cursor } from "~/components/cursor";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description">
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-		<ViewTransitions />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
 
     <PostHog />
-	</head>
-	<body class="flex flex-col gap-0.5 bg-neutral-50 md:flex-row md:pt-0 pt-14 ">
-		<Me /> 
-		<slot class="grow" />
-		<!-- <Cursor 
-		client:load 
-        initialScale={0.05}
-        activeScale={1.2}
-        inactiveOpacity={0.5}
-        activeOpacity={0.9}
-        transitionDuration={0.4}
- 		/> -->
-	</body>
+  </head>
+  <body class="flex flex-col gap-0.5 bg-neutral-50 md:flex-row md:pt-0 pt-14">
+    <Me />
+    <slot class="grow" />
+    <Cursor client:load />
+  </body>
 </html>
 <style is:global>
-	@font-face {
-		font-family: 'GeistVF';
-		src: url('/fonts/GeistVF.woff') format('woff');
-	}
+  @font-face {
+    font-family: "GeistVF";
+    src: url("/fonts/GeistVF.woff") format("woff");
+  }
 
-	@font-face {
-		font-family: 'GeistMonoVF';
-		src: url('/fonts/GeistMonoVF.woff') format('woff');
-	}
+  @font-face {
+    font-family: "GeistMonoVF";
+    src: url("/fonts/GeistMonoVF.woff") format("woff");
+  }
 
-	html {
-		font-family: 'GeistVF', sans-serif;
-	}
+  html {
+    font-family: "GeistVF", sans-serif;
+  }
 
-	code {
-		font-family: 'GeistMonoVF', monospace;
-	}
+  code {
+    font-family: "GeistMonoVF", monospace;
+  }
 </style>

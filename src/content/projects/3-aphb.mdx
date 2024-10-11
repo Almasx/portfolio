@@ -1,8 +1,17 @@
 ---
 title: "Landing Page for \nAstana Physics Battle"
 skills: ["React", "TypeScript", "Astro.JS", "Tailwind"]
-tags: ["2023", "Hemo Labs", "UI/UX, Frontend Dev"]
+tags:
+  [
+    "2023",
+    "Astana Physics Battle",
+    "UI/UX",
+    "Frontend",
+    "Astro.JS",
+    "Education",
+  ]
 slug: "astana-physics-battle"
+hook: "Physics competition platform for students"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -12,16 +21,16 @@ export const content = (
   <video src="/assets/web-3.mp4" class="rounded-xl" autoPlay muted loop />
 );
 
-{props.view === "sm" &&
-
 <Block
   slug={frontmatter.slug}
   tags={frontmatter.tags}
+  hook={frontmatter.hook}
   className="!bg-blue-900  pt-20 md:pl-20 p-4  h-fit"
+  active={props.view === "sm"}
+  client:visible
 >
   {content}
 </Block>
-}
 
 {props.view === "lg" && (
 

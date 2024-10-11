@@ -1,9 +1,13 @@
 import clsx from "clsx";
+import { useState } from "react";
+import { Header } from "./header";
 
 interface BlockProps extends React.HTMLAttributes<HTMLDivElement> {
   slug: string;
+  hook: string;
   tags: string[];
   size?: "md" | "sm";
+  active?: boolean;
 }
 
 export const Block: React.FC<BlockProps> = ({
@@ -11,8 +15,14 @@ export const Block: React.FC<BlockProps> = ({
   children,
   slug,
   tags,
+  hook,
   size = "md",
+  active = true,
 }) => {
+  const [hover, setHover] = useState(false);
+
+  if (!active) return <></>;
+
   return (
     <a
       href={`/projects/${slug}`}
@@ -21,6 +31,8 @@ export const Block: React.FC<BlockProps> = ({
         "block col-span-1 interactable",
         size === "md" ? "md:col-span-3" : "md:col-span-2"
       )}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
     >
       <div
         className={clsx(
@@ -30,6 +42,7 @@ export const Block: React.FC<BlockProps> = ({
         )}
       >
         {children}
+        <Header active={hover} hook={hook} letter={slug} />
       </div>
     </a>
   );

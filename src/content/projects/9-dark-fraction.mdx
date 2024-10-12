@@ -15,16 +15,16 @@ export const content = <img src="/assets/web-10.svg" alt="Dark Fraction" />;
   slug={frontmatter.slug}
   tags={frontmatter.tags}
   hook={frontmatter.hook}
-  className="!bg-black !min-h-60 !aspect-auto"
+  className="!bg-neutral-900 md:!min-h-96 !min-h-60 !aspect-auto"
   active={props.view === "sm"}
   client:visible
 >
-  <div className="absolute top-12 left-12">{content}</div>
+  <div className="absolute top-12 left-12 w-full">{content}</div>
 </Block>
 
 {props.view === "lg" && (
 
-<div className="relative md:rounded-3xl rounded-2xl  overflow-y-auto overflow-x-hidden md:p-11 p-6 flex flex-col bg-black text-neutral-500">
+<div className="relative md:rounded-3xl rounded-2xl  overflow-y-auto overflow-x-hidden md:p-11 p-6 flex flex-col bg-neutral-900 text-neutral-500">
   <Title className="text-white">{frontmatter.title}</Title>
   <TextBlock>
     I built a custom CMS and catalog platform for Dark Fracktion, a VK group

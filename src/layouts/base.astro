@@ -3,6 +3,7 @@ import Me from "~/components/me.astro";
 import { ViewTransitions } from "astro:transitions";
 import PostHog from "~/components/analytics.astro";
 import { Cursor } from "~/components/cursor";
+import { SEO } from "astro-seo";
 
 interface Props {
   title: string;
@@ -15,11 +16,41 @@ const { title } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+
+    <SEO
+      {title}
+      description="Almas Sapar, 0 -> 1, Design Engineer, Software Developer, UI/UX Design, US, Frontend, React, Next.js, Astro.js, Tailwind CSS"
+      openGraph={{
+        basic: {
+          title: "Hey! My name is Sapar Almas. Let's connect.",
+          type: "Portfolio",
+          image: "https://sapar.me/social-media/og.png",
+        },
+      }}
+      twitter={{
+        creator: "@AlmasX5",
+      }}
+      extend={{
+        link: [{ rel: "icon", href: "/favicon.ico" }],
+        meta: [
+          {
+            name: "twitter:image",
+            content: "https://sapar.me/social-media/twitter.png",
+          },
+          { name: "twitter:title", content: "Almas Sapar Portfolio" },
+          {
+            name: "twitter:description",
+            content:
+              "Hey! My name is Sapar Almas and i am Design Engineer. Let's connect.",
+          },
+        ],
+      }}
+    />
     <ViewTransitions />
 
     <PostHog />

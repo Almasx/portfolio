@@ -11,7 +11,7 @@ import { TextBlock, Title, Skills } from "~/layouts/content";
 import { Block } from "~/components/block";
 
 export const content = (
-  <img src="/assets/web-2.png" alt="Playwright Test Reporter" />
+  <img src="/assets/web-2.svg" alt="Playwright Test Reporter" />
 );
 
 <Block
@@ -26,7 +26,7 @@ export const content = (
 
 {props.view === "lg" && (
 
-<div class="relative md:rounded-3xl rounded-2xl overflow-y-auto overflow-x-hidden md:p-11 p-6 flex flex-col text-neutral-400">
+<div class="relative md:rounded-3xl rounded-2xl overflow-y-auto overflow-x-hidden md:p-11 p-6 flex flex-col text-neutral-400 bg-white">
   <Title>{frontmatter.title}</Title>
   <TextBlock>
     I developed a Playwright test reporter to improve the debugging workflow for
@@ -42,7 +42,7 @@ export const content = (
     highlight={"hover:text-green-500"}
     className="mb-4"
   />
-  <div class="top-1/3 md:absolute w-full left-1/2 scale-110 origin-center mt-[10%]">
+  <div class="top-1/3 md:absolute w-full md:w-1/2 left-1/2 scale-110 origin-center mt-[10%]">
     {content}
   </div>
 </div>

@@ -4,7 +4,7 @@ import { useMobile } from "~/hooks/use-mobile";
 
 const HEADER_ANIMATION = {
   visible: { opacity: 1, y: 0, x: "-50%" },
-  hidden: { opacity: 0, y: 100 },
+  hidden: { opacity: 0, y: 100, x: "-50%" },
 };
 
 const HEADER_TRANSITION = { type: "spring", ...springConfig, stiffness: 300 };

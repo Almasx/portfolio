@@ -1,44 +1,73 @@
 ---
 const links = [
-  { name: 'Github', url: 'https://github.com/Almasx' },
+  { name: "Github", url: "https://github.com/Almasx" },
   // { name: 'Email', url: 'mailto:almas.sapar@uni.minerva.edu' },
-  { name: 'Resume', url: '/Almas-Sapar-CV.pdf' },
-  { name: 'Linkedin', url: 'https://www.linkedin.com/in/almas-sapar/' },
+  { name: "Resume", url: "/Almas-Sapar-CV.pdf" },
+  { name: "Linkedin", url: "https://www.linkedin.com/in/almas-sapar/" },
 ];
 
-import { CTA } from './cta';
-import {ProfilePicture} from './pfp'
+import { CTA } from "./cta";
+import { ProfilePicture } from "./pfp";
 
-const atProject = Astro.url.href.includes("projects")
+const atProject = Astro.url.href.includes("projects");
 ---
 
-
-<div class="md:w-[320px] md:sticky md:h-screen top-0 flex flex-col gap-0.5 shrink-0">
+<div
+  class="md:w-[320px] md:sticky md:h-screen top-0 flex flex-col gap-0.5 shrink-0"
+>
   <div class="px-6 pt-16 pb-10 bg-white rounded-xl xl:pt-30 xl:pb-24">
     <ProfilePicture client:load />
     <h1 class="text-4xl leading-10 tracking-tight font-meduim">
       <span class="text-neutral-500">Hey!</span> I’m Almas
       <br />
       <span class="inline-block -mx-1 font-mono">
-        <span class="-mr-1 text-neutral-400">(</span>0<span class="text-[#F66E25] px-2">→</span>1<span class="-ml-1 text-neutral-400">)</span> 
+        <span class="-mr-1 text-neutral-400">(</span>0<span
+          class="text-[#F66E25] px-2">→</span
+        >1<span class="-ml-1 text-neutral-400">)</span>
       </span>
-   
+
       Design Engineer
     </h1>
   </div>
-  
+
   <div class="p-6 bg-white rounded-xl">
-    <p class="font-mono leading-5 text-neutral-400">Currently Minerva student based in SF. Previously at Yandex.</p>
+    <p class="font-mono leading-5 text-neutral-400">
+      Currently <a
+        href="https://minerva.edu"
+        class="underline interactable"
+        id="minerva#Most Innovative#7 rotation cities#Fun">Minerva</a
+      > student based in SF. Previously at <a
+        href="https://yandex.ru/jobs/services/lavka"
+        id="yandex-lavka#E Grocery#Lavka"
+        class="underline interactable">Yandex</a
+      >.
+    </p>
   </div>
 
-
-
-  <nav class="flex justify-between bg-neutral-200/10 fixed md:static backdrop-blur top-0 z-20 rounded-b-xl inset-x-0 items-center p-1 gap-0.5 md:p-0 md:bg-transparent">
-    {atProject && <a href="/" class="flex items-center justify-center h-12 bg-white aspect-square text-neutral-400 rounded-xl">←</a>}
-    {links.map((link) => (
-      <a href={link.url} target="_blank" class="bg-white before:content-['['] whitespace-nowrap before:mr-0.5 after:content-[']'] after:ml-0.5  h-12 items-center justify-center flex text-neutral-400 rounded-xl grow hover:text-[#F66E25] duration-200">{link.name}</Link>
-    ))}
+  <nav
+    class="flex justify-between bg-neutral-200/10 fixed md:static backdrop-blur top-0 z-20 rounded-b-xl inset-x-0 items-center p-1 gap-0.5 md:p-0 md:bg-transparent"
+  >
+    {
+      atProject && (
+        <a
+          href="/"
+          class="flex items-center justify-center h-12 bg-white aspect-square text-neutral-400 rounded-xl"
+        >
+          ←
+        </a>
+      )
+    }
+    {
+      links.map((link) => (
+        <a
+          href={link.url}
+          target="_blank"
+          class="bg-white before:content-['['] whitespace-nowrap before:mr-0.5 after:content-[']'] after:ml-0.5  h-12 items-center justify-center flex text-neutral-400 rounded-xl grow hover:text-[#F66E25] duration-200"
+        >
+          {link.name}
+        </a>
+      ))
+    }
   </nav>
- <CTA client:load/>
-
+  <CTA client:load />
 </div>

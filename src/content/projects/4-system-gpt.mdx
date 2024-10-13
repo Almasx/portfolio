@@ -4,6 +4,7 @@ skills: ["React", "XState", "Redis", "AI", "TypeScript", "Next.JS", "Tailwind"]
 tags: ["2023", "AI", "Productivity", "Fullstack", "Next.js", "XState"]
 slug: "system-gpt"
 hook: "AI-driven personalized goal setting and planning"
+color: "#5252ff"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -17,13 +18,7 @@ export const content = (
   />
 );
 
-<Block
-  slug={frontmatter.slug}
-  tags={frontmatter.tags}
-  hook={frontmatter.hook}
-  active={props.view === "sm"}
-  client:visible
->
+<Block {...frontmatter} active={props.view === "sm"} client:visible>
   {content}
 </Block>
 

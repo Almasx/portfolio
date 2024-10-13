@@ -12,6 +12,7 @@ tags:
   ]
 slug: "astana-physics-battle"
 hook: "Physics competition platform for students"
+color: "#163BA4"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -22,9 +23,7 @@ export const content = (
 );
 
 <Block
-  slug={frontmatter.slug}
-  tags={frontmatter.tags}
-  hook={frontmatter.hook}
+  {...frontmatter}
   className="!bg-blue-900 !pt-20 p-4 md:p-0 md:pl-20 h-fit"
   active={props.view === "sm"}
   client:visible

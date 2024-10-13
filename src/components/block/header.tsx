@@ -13,9 +13,15 @@ interface HeaderProps {
   active: boolean;
   hook: string;
   letter: string;
+  color?: string;
 }
 
-export const Header: React.FC<HeaderProps> = ({ active, hook, letter }) => {
+export const Header: React.FC<HeaderProps> = ({
+  active,
+  hook,
+  letter,
+  color,
+}) => {
   const isMobile = useMobile();
   const state = active || isMobile ? "visible" : "hidden";
 
@@ -27,15 +33,21 @@ export const Header: React.FC<HeaderProps> = ({ active, hook, letter }) => {
       variants={HEADER_ANIMATION}
       transition={HEADER_TRANSITION}
     >
-      <Icon letter={letter?.at(0)} />
+      <Icon letter={letter?.at(0)} color={color} />
       {hook}
     </motion.div>
   );
 };
 
-const Icon: React.FC<{ letter?: string }> = ({ letter }) => {
+const Icon: React.FC<{ letter?: string; color?: string }> = ({
+  letter,
+  color,
+}) => {
   return (
-    <div className="size-6 aspect-square rounded-full bg-[#FF6B00] text-white  flex items-center justify-center ">
+    <div
+      style={{ backgroundColor: `${color}` }}
+      className="size-6 aspect-square rounded-full bg-[#FF6B00] text-white  flex items-center justify-center "
+    >
       {letter?.toUpperCase().slice(0, 1)}
     </div>
   );

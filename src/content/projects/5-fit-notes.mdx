@@ -4,6 +4,7 @@ skills: ["Expo", "Tailwind", "TypeScript", "React Native"]
 tags: ["2024", "Personal Project", "UI/UX", "Mobile", "React Native", "Expo"]
 slug: "fitnotes"
 hook: "Simple, usable workout tracking"
+color: "#E44D02"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -12,9 +13,7 @@ import { Block } from "~/components/block";
 export const content = <img src="/assets/web-6.png" />;
 
 <Block
-  slug={frontmatter.slug}
-  tags={frontmatter.tags}
-  hook={frontmatter.hook}
+  {...frontmatter}
   className="!bg-black !aspect-[2/3]"
   size="sm"
   active={props.view === "sm"}

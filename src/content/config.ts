@@ -7,6 +7,7 @@ const projectsCollection = defineCollection({
     skills: z.array(z.string()),
     hook: z.string(),
     tags: z.array(z.string()),
+    color: z.string(),
   }),
 });
 

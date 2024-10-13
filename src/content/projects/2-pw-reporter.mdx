@@ -4,6 +4,7 @@ skills: ["React", "TypeScript", "Playwright", "Tailwind", "Tanstack Router"]
 tags: ["2024", "Developer Tools", "UI/UX", "Frontend", "Playwright", "Testing"]
 slug: "playwright-test-reporter"
 hook: "Refined debugging for Playwright tests"
+color: "#22C55E"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -14,13 +15,7 @@ export const content = (
   <img src="/assets/web-2.svg" alt="Playwright Test Reporter" />
 );
 
-<Block
-  slug={frontmatter.slug}
-  tags={frontmatter.tags}
-  hook={frontmatter.hook}
-  client:visible
-  active={props.view === "sm"}
->
+<Block {...frontmatter} client:visible active={props.view === "sm"}>
   {content}
 </Block>
 

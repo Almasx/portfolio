@@ -4,6 +4,7 @@ skills: ["React", "TypeScript", "Next.JS", "Tailwind"]
 tags: ["2023", "IELTS Prep", "AI", "Frontend", "Next.js", "Education"]
 slug: "ielts-writing"
 hook: "AI-powered IELTS writing practice and feedback"
+color: "#FF6B00"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -14,9 +15,7 @@ export const content = (
 );
 
 <Block
-  slug={frontmatter.slug}
-  tags={frontmatter.tags}
-  hook={frontmatter.hook}
+  {...frontmatter}
   className="md:!min-h-96 !min-h-60 !aspect-auto bg-white"
   active={props.view === "sm"}
   client:visible

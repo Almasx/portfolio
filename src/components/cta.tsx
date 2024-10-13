@@ -20,6 +20,9 @@ const MOBILE_ANIMATION = {
   transition: { type: "spring", ...springConfig },
 };
 
+export const LINK =
+  "https://t.me/saparxyz?text=%2522Hello%2520%25F0%259F%2591%258B%2520My%2520name%2520is%2520%5BNAME%5D,%2520i%2520want%2520to%2520connect%2522";
+
 export const CTA = () => {
   const { scrollY } = useScroll();
   const scrollProgress = useMotionValue(0);
@@ -27,10 +30,13 @@ export const CTA = () => {
   const isMobile = useMobile();
 
   const onClick = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
+    if (window.location.href.includes("projects")) {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: "smooth",
+      });
+    }
+    window.open(LINK);
   };
 
   useEffect(() => {
@@ -68,7 +74,7 @@ export const CTA = () => {
           <AnimatePresence mode="wait">
             <motion.button
               onClick={onClick}
-              className="bg-[#FF6B00] text-white absolute right-1 lg:right-2 inset-y-1 lg:inset-y-auto lg:h-9 shadow-[0px_0px_4px_#FFB682_inset] flex items-center gap-2 rounded-full lg:rounded-xl px-4 lg:px-3 lg:py-1.5 leading-4"
+              className="bg-[#FF6B00] hover:bg-[#FF881D] duration-200 text-white absolute right-1 lg:right-2 inset-y-1 lg:inset-y-auto lg:h-9 shadow-[0px_0px_4px_#FFB682_inset] flex items-center gap-2 rounded-full lg:rounded-xl px-4 lg:px-3 lg:py-1.5 leading-4"
             >
               <motion.span
                 key={isEndOfPage ? "end" : "start"}

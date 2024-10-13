@@ -13,7 +13,7 @@ export const Link: React.FC<LinkProps> = ({ href, children }) => {
       <a
         href={href}
         target="_blank"
-        className=" before:content-['['] whitespace-nowrap before:mr-1 after:content-[']'] after:ml-1 group-hover:text-[#F66E25] duration-300"
+        className=" before:content-['['] whitespace-nowrap before:mr-1 after:content-[']'] after:ml-1 group-hover:text-[#F66E25] duration-200"
       >
         {children}
       </a>

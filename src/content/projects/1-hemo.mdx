@@ -4,6 +4,7 @@ skills: ["Astro.JS", "Tailwind", "TypeScript", "React", "Framer Motion"]
 tags: ["2024", "Hemo Labs", "UI/UX", "Frontend", "React", "Astro.JS"]
 slug: "hemo-labs"
 hook: "AI-powered blood test recommendations"
+color: "#F58E7E"
 ---
 
 import { TextBlock, Title, Skills } from "~/layouts/content";
@@ -23,9 +24,7 @@ export const content = (
 );
 
 <Block
-  slug={frontmatter.slug}
-  tags={frontmatter.tags}
-  hook={frontmatter.hook}
+  {...frontmatter}
   className="bg-white"
   active={props.view === "sm"}
   client:visible
@@ -38,12 +37,16 @@ export const content = (
 <div class="relative flex flex-col p-6 overflow-hidden bg-white md:rounded-3xl rounded-2xl md:p-11 text-neutral-400">
   <Title className="!text-[#F58E7E]">{frontmatter.title}</Title>
   <TextBlock>
-    I redesigned the Hemo AI website, which offers AI-based blood test
-    recommendations. The original site was at hemo-ai.kz, and I developed a new
-    version at hemo-theta.vercel.app (now inactive). My work included creating
-    the main page and an application page with a dynamic form that lets users
-    enter health information and receive personalized blood test
-    recommendations.
+    I redesigned the Hemo AI website{" "}
+    <a href="http://hemo-ai.kz" className="underline">
+      from
+    </a>{" "}
+    →{" "}
+    <a href="http://hemo-theta.vercel.app" className="underline">
+      to
+    </a>{" "}
+    (now&nbsp;inactive). Hemo Ai offers AI-based blood test recommendations. I
+    created the main page and an application page with a dynamic form.
   </TextBlock>
   <Skills
     skills={frontmatter.skills}

@@ -1,5 +1,5 @@
 ---
-title: "Landing Page for Hemo Labs"
+title: "Landing Page \n for Hemo Labs"
 skills: ["Astro.JS", "Tailwind", "TypeScript", "React", "Framer Motion"]
 tags: ["2024", "Hemo Labs", "UI/UX", "Frontend", "React", "Astro.JS"]
 slug: "hemo-labs"
@@ -35,7 +35,9 @@ export const content = (
 {props.view === "lg" && (
 
 <div class="relative flex flex-col p-6 overflow-hidden bg-white md:rounded-3xl rounded-2xl md:p-11 text-neutral-400">
-  <Title className="!text-[#F58E7E]">{frontmatter.title}</Title>
+  <Title href="http://hemo-theta.vercel.app" className="!text-[#F58E7E]">
+    {frontmatter.title}
+  </Title>
   <TextBlock>
     I redesigned the Hemo AI website{" "}
     <a href="http://hemo-ai.kz" className="underline">

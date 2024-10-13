@@ -6,6 +6,7 @@ const links = [
   { name: "Linkedin", url: "https://www.linkedin.com/in/almas-sapar/" },
 ];
 
+import { About } from "./about";
 import { CTA } from "./cta";
 import { ProfilePicture } from "./pfp";
 
@@ -30,19 +31,7 @@ const atProject = Astro.url.href.includes("projects");
     </h1>
   </div>
 
-  <div class="p-6 bg-white rounded-xl">
-    <p class="font-mono leading-5 text-neutral-400">
-      Currently <a
-        href="https://minerva.edu"
-        class="underline interactable"
-        id="minerva#Most Innovative#7 rotation cities#Fun">Minerva</a
-      > student based in SF. Previously at <a
-        href="https://yandex.ru/jobs/services/lavka"
-        id="yandex-lavka#E Grocery#Lavka"
-        class="underline interactable">Yandex</a
-      >.
-    </p>
-  </div>
+  <About client:load />
 
   <nav
     class="flex justify-between bg-neutral-200/10 fixed md:static backdrop-blur top-0 z-20 rounded-b-xl inset-x-0 items-center p-1 gap-0.5 md:p-0 md:bg-transparent"

@@ -44,8 +44,8 @@ export const Block: React.FC<BlockProps> = ({
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         className={clsx(
-          "bg-white relative rounded-2xl overflow-hidden 2xl:min-h-[512px] hover:opacity-60",
-          "duration-200 ease-in-out md:col-span-3 aspect-square",
+          "bg-white relative rounded-2xl overflow-hidden  hover:opacity-60",
+          "duration-200 ease-in-out aspect-square",
           className
         )}
       >

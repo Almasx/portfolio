@@ -26,6 +26,7 @@ export const content = (
   {...frontmatter}
   className="!bg-blue-900 !pt-20 p-4 md:p-0 md:pl-20 h-fit"
   active={props.view === "sm"}
+  size="sm"
   client:visible
 >
   {content}
@@ -33,7 +34,7 @@ export const content = (
 
 {props.view === "lg" && (
 
-<div class="relative md:rounded-3xl rounded-2xl  overflow-hidden md:p-11 p-6 flex flex-col bg-blue-900 text-slate-200">
+<div class="relative  rounded-2xl  overflow-hidden md:p-11 p-6 flex flex-col bg-blue-900 text-slate-200">
   <Title href="https://aphb.bc-pf.org/" className="!text-[#E9C45B]">
     {frontmatter.title}
   </Title>

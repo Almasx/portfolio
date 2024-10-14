@@ -1,10 +1,10 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '~/layouts/base.astro';
+import { getCollection } from "astro:content";
+import Layout from "~/layouts/base.astro";
 
 export async function getStaticPaths() {
-  const projects = await getCollection('projects');
-  return projects.map(project => ({
+  const projects = await getCollection("projects");
+  return projects.map((project) => ({
     params: { slug: project.slug },
     props: { project },
   }));
@@ -16,7 +16,9 @@ const { title } = project.data;
 ---
 
 <Layout title={title}>
-  <main class="fixed z-50 grid overflow-hidden rounded-lg grow md:static -inset-0 top-16">
-    <Content view="lg"/>
+  <main
+    class="fixed z-50 grid overflow-hidden rounded-lg grow md:static -inset-0 top-16"
+  >
+    <Content view="lg" />
   </main>
 </Layout>

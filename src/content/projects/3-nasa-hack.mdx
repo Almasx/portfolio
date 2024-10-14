@@ -1,0 +1,46 @@
+---
+title: "Nasa Space App Hackathon"
+skills: ["React", "TypeScript", "Next.JS", "Tailwind"]
+tags: ["Hackathon", "Next.JS", "Agro", "2024", "Nasa"]
+slug: "nasa-space-hackathon"
+hook: "#2 Place NASA Hackathon"
+color: "#15803d"
+---
+
+import { TextBlock, Title, Skills } from "~/layouts/content";
+import { Block } from "~/components/block";
+
+export const content = <img src="/assets/web-nasa.svg" class="rounded-xl " />;
+
+<Block {...frontmatter} active={props.view === "sm"} size="sm" client:visible>
+  {content}
+</Block>
+
+{props.view === "lg" && (
+
+<div class="relative  rounded-2xl  overflow-y-scroll md:p-11 p-6 flex flex-col bg-black text-slate-200">
+  <Title
+    href="https://lnkd.in/dkxC8VKq"
+    className="text-green-700 "
+    buttonClassname="bg-neutral-900 text-white border-0 hover:text-green-500"
+  >
+    {frontmatter.title}
+  </Title>
+  <TextBlock className="text-neutral-500">
+    I developed Croppo, a platform that helps farmers analyze NASA datasets to
+    tackle unpredictable weather and pests. For the frontend, I integrated
+    Mapbox for seamless map visualization, allowing users to explore
+    agricultural data with ease. My teammate built a custom API, which I used to
+    pull real-time data. We also leveraged Supabase for quick and efficient data
+    storage, making it easy to manage user interactions and datasets on the fly.
+  </TextBlock>
+  <Skills
+    skills={frontmatter.skills}
+    highlight={"hover:text-green-600"}
+    className="text-neutral-500"
+  />
+  <div class="top-1/3 h-full md:absolute md:w-1/2 origin-center mt-[10%] left-1/2">
+    {content}
+  </div>
+</div>
+)}

@@ -2,12 +2,14 @@ import clsx from "clsx";
 
 interface Title extends React.HTMLAttributes<HTMLDivElement> {
   href?: string;
+  buttonClassname?: string;
 }
 
 export const Title: React.FC<Title> = ({
   className,
   children,
   href,
+  buttonClassname,
   ...props
 }) => {
   return (
@@ -24,7 +26,10 @@ export const Title: React.FC<Title> = ({
       {href && (
         <a
           href={href}
-          className="bg-neutral-50 rounded-full text-sm text-black hover:text-neutral-500 duration-200 items-center flex gap-2 border border-neutral-300 py-1.5 px-2.5 mr-auto mb-8"
+          className={clsx(
+            buttonClassname,
+            "bg-neutral-50  rounded-full text-sm text-black hover:text-neutral-500 duration-200 items-center flex gap-2 border border-neutral-300 py-1.5 px-2.5 mr-auto mb-8"
+          )}
         >
           Visit link <span className="font-mono h-4">↗</span>
         </a>

@@ -18,13 +18,13 @@ export const content = (
   />
 );
 
-<Block {...frontmatter} active={props.view === "sm"} client:visible>
+<Block {...frontmatter} active={props.view === "sm"} size="sm" client:visible>
   {content}
 </Block>
 
 {props.view === "lg" && (
 
-<div class="relative md:rounded-3xl rounded-2xl overflow-y-auto overflow-x-hidden md:p-11 p-6 flex flex-col text-neutral-400 bg-white">
+<div class="relative  rounded-2xl overflow-y-auto overflow-x-hidden md:p-11 p-6 flex flex-col text-neutral-400 bg-white">
   <Title href="https://drive.google.com/file/d/1_ozeyWO6ilp0YUne3vfCqULQ3A2y4lVq/view">
     {frontmatter.title}
   </Title>

@@ -10,11 +10,13 @@ const projects = await getCollection("projects");
 <Layout title="Almas Sapar">
   <main class="grid grid-cols-1 md:grid-cols-6 gap-1.5 grow rounded-xl">
     {
-      projects.map(async (project) => {
-        const { Content } = await project.render();
+      projects
+        .filter((project) => !project.id.startsWith("h"))
+        .map(async (project) => {
+          const { Content } = await project.render();
 
-        return <Content view="sm" />;
-      })
+          return <Content view="sm" />;
+        })
     }
     <div
       class="flex flex-col relative justify-between gap-0.5 lg:flex-row bg-black col-span-full lg:h-[480px] h-[calc(100dvh-64px)] overflow-hidden rounded-xl p-2 md:p-12 lg:pr-24"

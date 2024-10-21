@@ -1,0 +1,46 @@
+---
+title: "CalHacks"
+skills: ["React", "Agora", "Zustand", "Python", "Next.JS", "Tailwind"]
+tags: ["Hackathon", "Next.JS", "Video Call", "2024", "CalHacks"]
+slug: "calhacks"
+hook: ""
+color: "#06332D"
+---
+
+import { TextBlock, Title, Skills } from "~/layouts/content";
+import { Block } from "~/components/block";
+
+export const content = (
+  <img src="/assets/web-calhacks.svg" class="rounded-xl " />
+);
+
+<Block {...frontmatter} active={props.view === "sm"} size="sm" client:visible>
+  {content}
+</Block>
+
+{props.view === "lg" && (
+
+<div class="relative  rounded-2xl  overflow-y-scroll md:p-11 p-6 flex flex-col bg-black text-slate-200">
+  <Title
+    href="https://www.youtube.com/watch?v=8wdY5N1KWZE"
+    className="text-[#00FFE1] "
+    buttonClassname="bg-neutral-900 text-white border-0 hover:text-[#00FFE1]"
+  >
+    {frontmatter.title}
+  </Title>
+  <TextBlock className="text-neutral-500">
+    A real-time AI note-taking app for video calls, using Agora RTC for
+    streaming and live transcription. Transcripts are stored in a database and
+    processed by Fetch.AI agents to generate dynamic summaries at intervals,
+    automating meeting insights.
+  </TextBlock>
+  <Skills
+    skills={frontmatter.skills}
+    highlight={"hover:text-[#00FFE1]"}
+    className="text-neutral-500"
+  />
+  <div class="top-1/2 h-full md:absolute md:w-[40%] origin-center md:left-[60%] mt-24 md:mt-0">
+    {content}
+  </div>
+</div>
+)}

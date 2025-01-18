@@ -1,8 +1,7 @@
 import clsx from "clsx";
 import { useState } from "react";
-import { Header } from "./header";
-import { motion } from "framer-motion";
-import { springConfig } from "~/const";
+  import { Header } from "./header";
+  import { motion } from "framer-motion";
 
 interface BlockProps extends React.HTMLAttributes<HTMLDivElement> {
   slug: string;
@@ -39,12 +38,10 @@ export const Block: React.FC<BlockProps> = ({
       onMouseLeave={() => setHover(false)}
     >
       <motion.div
-        transition={{ springConfig }}
-        initial={{ opacity: 0.5 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+    
+  
         className={clsx(
-          "bg-white relative rounded-2xl overflow-hidden  hover:opacity-60",
+          "bg-white relative rounded-2xl overflow-hidden",
           "duration-200 ease-in-out aspect-square",
           className
         )}

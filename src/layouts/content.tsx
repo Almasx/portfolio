@@ -16,7 +16,7 @@ export const Title: React.FC<Title> = ({
     <div className="flex flex-col gap-3 md:gap-5 grow md:mb-auto">
       <h2
         className={clsx(
-          "text-4xl md:text-8xl font-medium md:leading-[90px] tracking-tighter text-balance 2xl:mr-96 text-neutral-500",
+          "text-4xl md:text-8xl font-medium md:leading-[90px] text-balance 2xl:mr-96 text-neutral-500",
           className
         )}
         {...props}
@@ -31,7 +31,7 @@ export const Title: React.FC<Title> = ({
             "bg-neutral-50  rounded-full text-sm text-black hover:text-neutral-500 duration-200 items-center flex gap-2 border border-neutral-300 py-1.5 px-2.5 mr-auto mb-8"
           )}
         >
-          Visit link <span className="font-mono h-4">↗</span>
+          Visit link <span className="h-4">↗</span>
         </a>
       )}
     </div>
@@ -47,7 +47,7 @@ export const TextBlock: React.FC<TextBlockProps> = ({
   return (
     <p
       className={clsx(
-        "md:w-96 font-mono mb-2 text-inherit relative z-10",
+        "md:w-96 mb-2 text-inherit relative z-10",
         className
       )}
     >
@@ -76,7 +76,7 @@ export const Skills: React.FC<TagProps> = ({
       {skills.map((tag) => (
         <p
           className={clsx(
-            "before:content-['['] whitespace-nowrap before:mr-1 after:content-[']'] after:ml-1 ",
+            "whitespace-nowrap",
             highlight
           )}
         >

@@ -20,8 +20,7 @@ const MOBILE_ANIMATION = {
   transition: { type: "spring", ...springConfig },
 };
 
-export const LINK =
-  "https://t.me/saparxyz?text=%2522Hello%2520%25F0%259F%2591%258B%2520My%2520name%2520is%2520%5BNAME%5D,%2520i%2520want%2520to%2520connect%2522";
+export const LINK = "https://www.linkedin.com/in/almas-sapar/";
 
 export const CTA = () => {
   const { scrollY } = useScroll();
@@ -86,7 +85,7 @@ export const CTA = () => {
               >
                 {isEndOfPage ? "Ready to chat?" : "Drop a message"}
               </motion.span>
-              <span className="font-mono text-xl">→</span>
+              <span className="text-xl">→</span>
             </motion.button>
           </AnimatePresence>
         </motion.div>

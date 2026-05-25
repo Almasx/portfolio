@@ -1,8 +1,7 @@
 ---
 const links = [
   { name: "Github", url: "https://github.com/Almasx" },
-  // { name: 'Email', url: 'mailto:almas.sapar@uni.minerva.edu' },
-  { name: "Resume", url: "/Almas-Sapar-CV.pdf" },
+  { name: "X", url: "https://x.com/almas_sapar" },
   { name: "Linkedin", url: "https://www.linkedin.com/in/almas-sapar/" },
 ];
 
@@ -18,7 +17,7 @@ const atProject = Astro.url.href.includes("projects");
 >
   <div class="px-6 pt-16 pb-10 bg-white rounded-xl xl:pt-30 xl:pb-24">
     <ProfilePicture client:load />
-    <h1 class="text-4xl leading-10 tracking-tight font-meduim">
+    <h1 class="text-4xl leading-10">
       <span class="text-neutral-500">Hey!</span> I’m Almas
       <br />
       <span class="inline-block -mx-1 font-mono">
@@ -51,7 +50,7 @@ const atProject = Astro.url.href.includes("projects");
         <a
           href={link.url}
           target="_blank"
-          class="bg-white before:content-['['] whitespace-nowrap before:mr-0.5 after:content-[']'] after:ml-0.5  h-12 items-center justify-center flex text-neutral-400 rounded-xl grow hover:text-[#F66E25] duration-200"
+          class="bg-white whitespace-nowrap h-12 items-center justify-center flex text-neutral-500 rounded-xl grow hover:text-[#F66E25] duration-200"
         >
           {link.name}
         </a>

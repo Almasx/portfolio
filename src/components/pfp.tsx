@@ -27,7 +27,7 @@ export const ProfilePicture = () => {
 
   return (
     <div className="relative mb-8 duration-200 size-16 group hover:size-32">
-      <div className="absolute -top-4 -right-4 rotate-3 font-mono text-neutral-600 pointer-events-none ">
+      <div className="absolute -top-4 -right-4 rotate-3 text-neutral-600 pointer-events-none ">
         ?
       </div>
       <video

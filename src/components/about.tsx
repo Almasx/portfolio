@@ -6,22 +6,16 @@ export const About = () => {
   const content = isMobile ? "below ↓" : "on the right →";
 
   return (
-    <div className="p-6 bg-white rounded-xl">
-      <p className="font-mono leading-5 text-neutral-400">
-        Currently{" "}
-        <a
-          href="https://minerva.edu"
-          className="underline interactable"
-          id="minerva#Most Innovative#7 rotation cities#Fun"
-        >
-          Minerva
-        </a>{" "}
-        student based in SF. Previously at{" "}
-        <a
-          href="https://yandex.ru/jobs/services/lavka"
-          id="yandex-lavka#E Grocery#Lavka"
-          className="underline interactable"
-        >
+    <div className="p-6 bg-white rounded-xl tracking-tight">
+      <p className="leading-5 text-neutral-500">
+        Design Engineer at{" "}
+        <a href="https://replit.com" target="_blank"
+          className="text-neutral-600 hover:text-black duration-200">
+          Replit
+        </a>
+        , based in SF. Previously Dex (YC W25),{" "}
+        <a href="https://yandex.ru/jobs/services/lavka" target="_blank"
+          className="text-neutral-600 hover:text-black duration-200">
           Yandex
         </a>
         .<br />

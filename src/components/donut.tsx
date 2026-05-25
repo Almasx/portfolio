@@ -72,7 +72,7 @@ export const Donut: React.FC<{ className?: string }> = ({ className }) => {
     <div className={clsx("flex items-center justify-center", className)}>
       <pre
         ref={preRef}
-        className="font-mono text-xs text-white whitespace-pre"
+        className="text-xs text-white whitespace-pre"
       ></pre>
     </div>
   );
